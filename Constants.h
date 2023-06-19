@@ -19,12 +19,14 @@ namespace Constants {
         // Run 1 constants
 
         double data_pot = 1.62E20;
-	double mc_pot = 1.31E+21;
+	double mc_pot = 5.1303E+19;  // 1.31E+21;
 	double integrated_flux = 1.19E11; // cm^-2                                                                                                                                                      
 	double number_targets = 1.05E30; // Argon nuclei, not nucleons    
 
 	static const double ChargedPionMomentumThres = 0.07; // GeV/c
 
+	static const int NNeut = 4;
+	bool XSecMode = true;
         //--------------------------------------------------//
 
         // Pdg codes & masses
@@ -61,25 +63,25 @@ namespace Constants {
 	static const int NBinsVertexY = 15; static const double MinVertexY = -105., MaxVertexY = 105.;
 	static const int NBinsVertexZ = 25; static const double MinVertexZ = 10., MaxVertexZ = 1026.;
 
-	TString RecoLabelXAxisVertexX = ";Vertex x [cm]";
-	TString RecoLabelXAxisVertexY = ";Vertex y [cm]";
-	TString RecoLabelXAxisVertexZ = ";Vertex z [cm]";
+	TString RecoLabelXAxisVertexX = ";Vertex x [cm] ;Weighted Events / 5.1303E+19 POT";
+	TString RecoLabelXAxisVertexY = ";Vertex y [cm] ;Weighted Events / 5.1303E+19 POT";
+	TString RecoLabelXAxisVertexZ = ";Vertex z [cm] ;Weighted Events / 5.1303E+19 POT";
 	
         //--------------------------------------------------//
 
 	// Labels for 1D plots
 	
-	static TString LabelXAxisECal = ";E^{Cal} [GeV]"; static TString LabelXAxisTrueECal = ";True E^{Cal} [GeV]";
+	static TString LabelXAxisECal = ";E^{Cal} [GeV] ;#frac{d#sigma}{dE^{cal}}  [cm^{2} GeV^{-1} Ar^{-1}] "; static TString LabelXAxisTrueECal = ";True E^{Cal} [GeV]";
 	static TString LabelXAxisMuonMomentum = ";p_{#mu} [GeV/c]"; static TString LabelXAxisTrueMuonMomentum = ";True p_{#mu} [GeV/c]";
 	static TString LabelXAxisProtonMomentum = ";p_{p} [GeV/c]"; static TString LabelXAxisTrueProtonMomentum = ";True p_{p} [GeV/c]";
 	static TString LabelXAxisMuonPhi = ";#phi_{#mu} [deg]"; static TString LabelXAxisTrueMuonPhi = ";True #phi_{#mu} [deg]";
 	static TString LabelXAxisProtonPhi = ";#phi_{p} [deg]"; static TString LabelXAxisTrueProtonPhi = ";True #phi_{p} [deg]";
-	static TString LabelXAxisMuonCosTheta = ";cos#theta_{#mu}"; static TString LabelXAxisTrueMuonCosTheta = ";True cos#theta_{#mu}";
+	static TString LabelXAxisMuonCosTheta = ";cos#theta_{#mu};#frac{d#sigma}{dcos#theta_{#mu}}  [cm^{2} Ar^{-1}]"; static TString LabelXAxisTrueMuonCosTheta = ";True cos#theta_{#mu}";
 	static TString LabelXAxisProtonCosTheta = ";cos#theta_{p}"; static TString LabelXAxisTrueProtonCosTheta = ";True cos#theta_{p}";
 	static TString LabelXAxisDeltaPtx = ";#deltap_{T,x} [GeV/c]"; static TString LabelXAxisTrueDeltaPtx = ";True #deltap_{T,x} [GeV/c]";
 	static TString LabelXAxisDeltaPty = ";#deltap_{T,y} [GeV/c]"; static TString LabelXAxisTrueDeltaPty = ";True #deltap_{T,y} [GeV/c]";	
-	static TString LabelXAxisDeltaPT = ";#deltap_{T} [GeV/c]"; static TString LabelXAxisTrueDeltaPT = ";True #deltap_{T} [GeV/c]";
-	static TString LabelXAxisDeltaAlphaT = ";#delta#alpha_{T} [deg]"; static TString LabelXAxisTrueDeltaAlphaT = ";True #delta#alpha_{T} [deg]";
+	static TString LabelXAxisDeltaPT = ";#deltap_{T} [GeV/c];#frac{d#sigma}{d#deltap_{T}}  [cm^{2} GeV^{-1}c Ar^{-1}]"; static TString LabelXAxisTrueDeltaPT = ";True #deltap_{T} [GeV/c]";
+	static TString LabelXAxisDeltaAlphaT = ";#delta#alpha_{T} [deg];#frac{d#sigma}{d#delta#alpha_{T}}  [cm^{2} deg^{-1} Ar^{-1}]"; static TString LabelXAxisTrueDeltaAlphaT = ";True #delta#alpha_{T} [deg]";
 	static TString LabelXAxisDeltaPhiT = ";#delta#phi_{T} [deg]"; static TString LabelXAxisTrueDeltaPhiT = ";True #delta#phi_{T} [deg]";
 
         //--------------------------------------------------//
