@@ -20,6 +20,8 @@ namespace Constants {
 
         double data_pot = 1.62E20;
 	double mc_pot = 5.1303E+19;  // 1.31E+21;
+	double mc_pot_highStat = 8.03359E+20;
+
 	double integrated_flux = 1.19E11; // cm^-2                                                                                                                                                      
 	double number_targets = 1.05E30; // Argon nuclei, not nucleons    
 

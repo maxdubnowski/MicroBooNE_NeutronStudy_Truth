@@ -5,7 +5,7 @@
 #include <TString.h>
 #include <TVector3.h>
 
-#include "Constants.h"
+#include "../Constants.h"
 
 using namespace std;
 using namespace Constants;
@@ -101,7 +101,7 @@ void NeutrinoSelectionFilter::Loop() {
 
    // Loop over the events
    int numberBeforeCut =0; int numberAfterCut =0;
-   for (Long64_t jentry=0; jentry<nentries;jentry++) {
+   for (Long64_t jentry=0; jentry< nentries;jentry++) {
 
       Long64_t ientry = LoadTree(jentry);
       if (ientry < 0) break;
@@ -111,7 +111,14 @@ void NeutrinoSelectionFilter::Loop() {
 
 
       // MC weight to scale events to data pot
-      double event_weight = (data_pot / mc_pot);// * weightSplineTimesTune;
+      //if (fabs(weightSplineTimesTune) != weightSplineTimesTune){ continue;}
+      if (weightSplineTimesTune <= 0 || weightSplineTimesTune > 30) { 
+	cout << weightSplineTimesTune << endl;
+	continue;
+      } // bug fix weight
+      
+      double event_weight = (data_pot / mc_pot_highStat) * weightSplineTimesTune;
+      
       //std::cout << weightSpline << "   " << weightTune << "   " << weightSplineTimesTune << std::endl; //the weights were not set
 
 
@@ -202,7 +209,7 @@ void NeutrinoSelectionFilter::Loop() {
       numberBeforeCut++;
       // Use only true CC1p0pi events inside fiducial volume of interest
       if (!inFV(VertexLocation)){ continue; }
-      if (pMissingMagnitude > 0.3){ continue; }
+      //if ((pMissingMagnitude > 0.3) && (pMissingDirection >-0.2)){ continue; }
       numberAfterCut++;
    
 

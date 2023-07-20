@@ -70,8 +70,9 @@ void NeutrinoSelectionFilter::Loop() {
      TrueVertexYPlot[inte] = new TH1D(InteractionLabels[inte]+"TrueVertexYPlot",RecoLabelXAxisVertexY,NBinsVertexY,MinVertexY-20,MaxVertexY+20);
      TrueVertexZPlot[inte] = new TH1D(InteractionLabels[inte]+"TrueVertexZPlot",RecoLabelXAxisVertexZ,NBinsVertexZ,MinVertexZ-80,MaxVertexZ+80);
      TrueMuonCosThetaPlot[inte] = new TH1D(InteractionLabels[inte]+"TrueMuonCosThetaPlot",LabelXAxisMuonCosTheta,NBinsMuonCosTheta,ArrayNBinsMuonCosTheta);
-     TrueDeltaPtPlot[inte] = new TH1D(InteractionLabels[inte]+"TrueDeltaPtPlot",LabelXAxisDeltaPT,NBinsDeltaPT,ArrayNBinsDeltaPT);
-     TrueNeutronMultiplicity[inte] = new TH1D(InteractionLabels[inte]+"TrueNeutronMultiplicityPlot",";Neutron Multiplicity;#frac{d#sigma}{dN}  [cm^{2} N^{-1} Ar^{-1}]",7,-0.5, 6.5);
+     TrueDeltaPtPlot[inte] = new TH1D(InteractionLabels[inte]+// "TrueDeltaPtPlot",LabelXAxisDeltaPT,NBinsDeltaPT,ArrayNBinsDeltaPT);
+     // TrueNeutronMultiplicity[inte] = new TH1D(InteractionLabels[inte]+"TrueNeutronMultiplicityPlot",";Neutron Multiplicity;#frac{d#sigma}{
+dN}  [cm^{2} N^{-1} Ar^{-1}]",7,-0.5, 6.5);
      TrueDeltaAlphaTPlot[inte] = new TH1D(InteractionLabels[inte]+"TrueDeltaAlphaTPlot",LabelXAxisDeltaAlphaT,NBinsDeltaAlphaT,ArrayNBinsDeltaAlphaT);
     
      TruePMissingDirectionPlot[inte][NNeut] = new TH1D(InteractionLabels[inte]+"TruePMissingDirectionPlot_AllNeutron",";cos(#theta_{miss});#frac{d#sigma}{dcos(#theta_{miss})}  [cm^{2} Ar^{-1}]",10,-1,1);
@@ -202,7 +203,7 @@ void NeutrinoSelectionFilter::Loop() {
       numberBeforeCut++;
       // Use only true CC1p0pi events inside fiducial volume of interest
       if (!inFV(VertexLocation)){ continue; }
-      if (pMissingMagnitude > 0.3){ continue; }
+      //if ((pMissingMagnitude > 0.3) && (pMissingDirection >-0.2)){ continue; }
       numberAfterCut++;
    
 

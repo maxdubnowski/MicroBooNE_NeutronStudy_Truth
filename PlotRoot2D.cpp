@@ -136,8 +136,8 @@ void PlotRoot2D() {
 	    
 	    
 	    PlotCanvas->cd();
-	    if (XSecMode==false){ PlotCanvas->SaveAs("myPlots/"+PlotNames[iPlot]+"NoCut_MicroBooNE_Truth.pdf"); }
-	    else {PlotCanvas->SaveAs("myPlotsXsec/"+PlotNames[iPlot]+"XSectionNoCut_MicroBooNE_Truth.pdf"); }
+	    if (XSecMode==false){ PlotCanvas->SaveAs("myPlots/"+PlotNames[iPlot]+"NeutronCut_MicroBooNE_Truth.pdf"); }
+	    else {PlotCanvas->SaveAs("myPlotsXsec/"+PlotNames[iPlot]+"XSectionNeutronCut_MicroBooNE_Truth.pdf"); }
 	 
 	  } // End of the loop over the samples grabing the plots	
 	} // End of the loop over the plots

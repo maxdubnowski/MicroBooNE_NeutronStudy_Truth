@@ -92,11 +92,11 @@ void PlotRoot() {
 	 // PlotNames.push_back("TrueVertexYPlot");
 	 // PlotNames.push_back("TrueVertexZPlot");
 
-	//PlotNames.push_back("TrueMuonCosThetaPlot");
-	//PlotNames.push_back("TrueDeltaPtPlot");
+	PlotNames.push_back("TrueMuonCosThetaPlot");
+	PlotNames.push_back("TrueDeltaPtPlot");
 	
-	// PlotNames.push_back("TrueNeutronMultiplicityPlot");
-	 //PlotNames.push_back("TrueDeltaAlphaTPlot");
+	PlotNames.push_back("TrueNeutronMultiplicityPlot");
+	 PlotNames.push_back("TrueDeltaAlphaTPlot");
 	
 	// for (int neut=0; neut < 2; neut++){
 	//   PlotNames.push_back(Form("TruePMissingDirectionPlot_Neutron%d",neut));
@@ -186,8 +186,8 @@ void PlotRoot() {
 		PlotCanvas->cd();
 		leg->Draw();
 		
-		if (XSecMode==false){ PlotCanvas->SaveAs("myPlots/"+PlotNames[iPlot]+"NoCut_MicroBooNE_Truth.pdf"); }
-		else {PlotCanvas->SaveAs("myPlotsXsec/"+PlotNames[iPlot]+"XSection_NoCut_MicroBooNE_Truth.pdf"); }
+		if (XSecMode==false){ PlotCanvas->SaveAs("myPlots/"+PlotNames[iPlot]+"NeutronCut_MicroBooNE_Truth.pdf"); }
+		else {PlotCanvas->SaveAs("myPlotsXsec/"+PlotNames[iPlot]+"XSection_NeutronCut_MicroBooNE_Truth.pdf"); }
 		
 	} // End of the loop over the plots
 	
